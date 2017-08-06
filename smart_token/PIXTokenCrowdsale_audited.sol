@@ -39,7 +39,7 @@ contract SafeMath {
  *
  * https://github.com/ethereum/EIPs/issues/20
  */
-interface Token {
+contract Token {
 
     /// @return total amount of tokens
     function totalSupply() constant returns (uint256 supply);
@@ -450,8 +450,8 @@ contract PIXToken is StandardToken, SafeMath {
         return super.transferFrom(_from, _to, _value);
     }
 
-    function() {
-        revert();
+    function() payable {
+        buyRecipient(msg.sender);
     }
 
 }
