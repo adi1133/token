@@ -39,10 +39,7 @@ contract SafeMath {
  *
  * https://github.com/ethereum/EIPs/issues/20
  */
-contract Token {
-
-    /// @return total amount of tokens
-    function totalSupply() constant returns (uint256 supply);
+interface Token {
 
     /// @param _owner The address from which the balance will be retrieved
     /// @return The balance
